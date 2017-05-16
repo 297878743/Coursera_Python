@@ -6,8 +6,8 @@ url = address
 uh = urllib.urlopen(url)
 data = uh.read()
 
-tree = ET.fromstring(data)
-results = tree.findall('.//count')
+tree = ET.fromstring(data)   # parse data
+results = tree.findall('.//count')   #.//count作用为找到所有的count
 sum = 0
 for i in results:
     sum = sum + int(i.text)
